@@ -1,0 +1,45 @@
+{
+    "name": "Run",
+    "maps": [
+        {
+            "name": "Run",
+            "id": "c382ab71-767f-4218-8121-2bcbc9c0c673",
+            "actions": [
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "a956f19f-d4a2-4126-9a8d-f1c3a7e8e869",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c9462164-af50-4611-8eca-e981b249c892",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Screen",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Screen",
+            "bindingGroup": "Screen",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
