@@ -480,6 +480,7 @@ MonoBehaviour:
   ActionCameraPoint: {fileID: 860853622}
   GoodEndCameraPoint: {fileID: 1518201028}
   BadEndCameraPoint: {fileID: 1979455850}
+  _timeToEndAnimation: 3
   _camera: {fileID: 964783881}
   _canvas: {fileID: 947420080}
 --- !u!4 &223635042
@@ -1804,6 +1805,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMobile: 0
+  _swipeRight: 0
+  _swipeLeft: 1
 --- !u!1 &750729039663019108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,7 +1859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8212015068082760309}
   m_LocalRotation: {x: 0, y: 0, z: 0.7035978, w: 0.71059847}
-  m_LocalPosition: {x: -2.7608051, y: 5.74338, z: 0}
+  m_LocalPosition: {x: -2.760805, y: 5.74338, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8772538434141644921}

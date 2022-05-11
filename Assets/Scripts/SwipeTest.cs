@@ -8,7 +8,10 @@ using UnityEngine.UI;
 
 public class SwipeTest : AbstractProgress
 {
-    [SerializeField] bool _isMobile = true;
+    [SerializeField] private bool _isMobile = true;
+    [SerializeField] private bool _swipeRight;
+    [SerializeField] private bool _swipeLeft;
+ 
     private Animator _animator;
     private bool _isPlaying = false;
 
@@ -66,7 +69,12 @@ public class SwipeTest : AbstractProgress
         {
             if(Math.Abs(_swipeDelta.x) > Math.Abs(_swipeDelta.y))
             {
-                if(_swipeDelta.x > 0 && CameraSwitcherMain.GameActivated)
+                if(_swipeDelta.x > 0 && _swipeRight && CameraSwitcherMain.GameActivated)
+                {
+                    ProgressUp();
+                    PlayAnimation();
+                }
+                else if (_swipeDelta.x < 0 && _swipeLeft && CameraSwitcherMain.GameActivated)
                 {
                     ProgressUp();
                     PlayAnimation();

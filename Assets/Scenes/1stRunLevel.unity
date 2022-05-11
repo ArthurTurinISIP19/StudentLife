@@ -2292,6 +2292,7 @@ MonoBehaviour:
   _actionCameraPoint: {fileID: 393172272}
   _goodEndCameraPoint: {fileID: 2020994784}
   _badEndCameraPoint: {fileID: 815175161}
+  _timeToEndAnimation: 1.5
   _camera: {fileID: 519420031}
   _canvas: {fileID: 2119499519}
 --- !u!4 &1998834903

@@ -14,6 +14,8 @@ public class CameraSwitcherMain : MonoBehaviour
     [SerializeField] private GameObject GoodEndCameraPoint;
     [SerializeField] private GameObject BadEndCameraPoint;
 
+    public float _timeToEndAnimation;
+
     [SerializeField] private Camera _camera;
     [SerializeField] private Canvas _canvas;
 

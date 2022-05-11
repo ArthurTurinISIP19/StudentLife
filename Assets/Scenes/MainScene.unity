@@ -540,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenesSchool:
   - 1stRunLevel
+  - 6thPizza
   - 2stEnter
   - 3rdBus
   _scenesHome:
@@ -553,7 +554,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  _gameManager: {fileID: 0}
+  _cameraSwitcher: {fileID: 0}
+  _cameraSwitcherMain: {fileID: 0}
 --- !u!4 &330333470
 Transform:
   m_ObjectHideFlags: 0

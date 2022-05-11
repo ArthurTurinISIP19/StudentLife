@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/5thTrainSeat.unity
     guid: 647843fa742fa174eb40d2843c20012e
+  - enabled: 1
+    path: Assets/Scenes/6thPizza.unity
+    guid: 050adb73030f69a4ea53a1101d7889d2
   m_configObjects: {}

@@ -8,7 +8,9 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private string[] _scenesSchool;
     [SerializeField] private string[] _scenesHome;
     [SerializeField] private string[] _scenesStreet;
-    [SerializeField] private AbstractGameResult _gameManager;
+    private AbstractGameResult _gameManager;
+    public CameraSwitcher _cameraSwitcher;
+    public CameraSwitcherMain _cameraSwitcherMain;
 
     private List<string> _currentScenes = new List<string>();
 
@@ -76,7 +78,20 @@ public class SceneManager : MonoBehaviour
             _gameManager = GameObject.Find("Red").GetComponent<AbstractGameResult>();
             _gameManager.GameLost += CheckGameResult;
         }
+        FindGetCameraSwitcher();
     }
+    private void FindGetCameraSwitcher()
+    {
+        if (GameObject.Find("/CameraSwitcher").GetComponent<CameraSwitcher>())
+        {
+            _cameraSwitcher = GameObject.Find("/CameraSwitcher").GetComponent<CameraSwitcher>();
+        }
+        else
+        {
+            _cameraSwitcherMain = GameObject.Find("/CameraSwitcher").GetComponent<CameraSwitcherMain>();
+        }
+    }
+
     private void ChangeSceneNumber()
     {
         if (_sceneNumber != _currentScenes.Count - 1)
@@ -101,18 +116,32 @@ public class SceneManager : MonoBehaviour
             }
             else
             {
-                StartCoroutine(WaitToNextScene());
+                if(_cameraSwitcher != null)
+                {
+                    StartCoroutine(WaitToNextScene(_cameraSwitcher._timeToEndAnimation));
+                }
+                else
+                {
+                    StartCoroutine(WaitToNextScene(_cameraSwitcherMain._timeToEndAnimation));
+                }
             }
         }
         else
         {
-            StartCoroutine(WaitToNextScene());
+            if (_cameraSwitcher != null)
+            {
+                StartCoroutine(WaitToNextScene(_cameraSwitcher._timeToEndAnimation));
+            }
+            else
+            {
+                StartCoroutine(WaitToNextScene(_cameraSwitcherMain._timeToEndAnimation));
+            }
         }
     }
 
-    public IEnumerator WaitToNextScene()
+    public IEnumerator WaitToNextScene(float waitTime)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitTime);
         ChangeSceneNumber();
     }
     public IEnumerator WaitFindGetGameManager()

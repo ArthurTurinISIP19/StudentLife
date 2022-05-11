@@ -1114,7 +1114,9 @@ MonoBehaviour:
   _game: {fileID: 1336201596}
   _startAnimation: {fileID: 1336201599}
   _slider: {fileID: 444686705}
+  _time: 10
   _progressStepUp: 2
+  _progressStepDown: 1
 --- !u!4 &1230768278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2194239518150841699, guid: fe14177e4a759d446b6599c1e3f25fb0, type: 3}
@@ -1348,6 +1350,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isMobile: 0
+  _swipeRight: 1
+  _swipeLeft: 0
 --- !u!111 &1336201597
 Animation:
   m_ObjectHideFlags: 0
@@ -2151,6 +2155,7 @@ MonoBehaviour:
   ActionCameraPoint: {fileID: 336915138}
   GoodEndCameraPoint: {fileID: 565803650}
   BadEndCameraPoint: {fileID: 166161200}
+  _timeToEndAnimation: 2
   _camera: {fileID: 519420031}
   _canvas: {fileID: 2119499519}
 --- !u!1 &2072013079
