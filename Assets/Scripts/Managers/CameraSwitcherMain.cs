@@ -28,6 +28,7 @@ public class CameraSwitcherMain : MonoBehaviour
 
     private void Awake()
     {
+        _isGameActivated = false;
         _camera.transform.position = StartCameraPoint.transform.position;
         _canvas.enabled = false;
     }
@@ -61,7 +62,7 @@ public class CameraSwitcherMain : MonoBehaviour
     private void GameOverCamera(bool isLost)
     {
         _isGameActivated = false;
-        //_canvas.enabled = false;
+        _canvas.enabled = false;
 
         if (isLost)
         {

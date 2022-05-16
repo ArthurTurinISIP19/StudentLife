@@ -35,7 +35,7 @@ public class LelvelManager : MonoBehaviour
     }
     public void Train()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("5thTrainSeat");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("9thWinter");
     }
     public void MainMenu()
     {

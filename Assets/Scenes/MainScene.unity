@@ -540,12 +540,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenesSchool:
   - 4thRingRun
-  - 6thPizza
   - 2stEnter
+  - 6thPizza
   _scenesHome:
   - 7thBackPack
+  - 8thCtrlCV
   _scenesStreet:
   - 1stRunLevel
+  - 9thWinter
   - 3rdBus
   - 5thTrainSeat
   _cameraSwitcher: {fileID: 0}
@@ -600,7 +602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2118.0005, y: -871}
+  m_AnchoredPosition: {x: 832.9995, y: -613.00024}
   m_SizeDelta: {x: 1194.29, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390346736
@@ -741,7 +743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408680033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.0574493, z: 108.38281}
+  m_LocalPosition: {x: -1.6, y: 5.0574493, z: 108.38281}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1527258619}
@@ -791,7 +793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3608.0002, y: -1774.9998}
+  m_AnchoredPosition: {x: -657.00024, y: -1517}
   m_SizeDelta: {x: 1194.29, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &412152176
@@ -2574,7 +2576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3608.0002, y: -870.9998}
+  m_AnchoredPosition: {x: -657, y: -613}
   m_SizeDelta: {x: 1194.29, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1162433293
@@ -2836,8 +2838,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 330333469}
-        m_TargetAssemblyTypeName: Test, Assembly-CSharp
+      - m_Target: {fileID: 1858438885}
+        m_TargetAssemblyTypeName: LevelDisplay, Assembly-CSharp
         m_MethodName: ButtonStartLocation
         m_Mode: 1
         m_Arguments:
@@ -3195,7 +3197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3608, y: -1458.9998}
+  m_AnchoredPosition: {x: -657, y: -1201}
   m_SizeDelta: {x: 1194.29, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1367159190
@@ -4323,7 +4325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3608.0002, y: -1155.9998}
+  m_AnchoredPosition: {x: -657.00024, y: -898}
   m_SizeDelta: {x: 1194.29, y: 217.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747935886
@@ -5114,7 +5116,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 150
   m_TargetDisplay: 0
 --- !u!224 &2023409489
 RectTransform:
@@ -5375,7 +5377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Train
+  m_Text: Winter
 --- !u!222 &2122255164
 CanvasRenderer:
   m_ObjectHideFlags: 0

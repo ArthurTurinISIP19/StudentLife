@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/7thBackPack.unity
     guid: 34b50576e7a5fe440b808160f6fc49bb
+  - enabled: 1
+    path: Assets/Scenes/8thCtrlCV.unity
+    guid: cb8a69dcf71e922449275a478af14579
+  - enabled: 1
+    path: Assets/Scenes/9thWinter.unity
+    guid: e379a5df3d0c7a042a11531f75a89203
   m_configObjects: {}

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
+    public static SceneManager _instance;
+
     [SerializeField] private string[] _scenesSchool;
     [SerializeField] private string[] _scenesHome;
     [SerializeField] private string[] _scenesStreet;
@@ -13,7 +15,6 @@ public class SceneManager : MonoBehaviour
     public CameraSwitcherMain _cameraSwitcherMain;
 
     private List<string> _currentScenes = new List<string>();
-
     private int _sceneNumber = 0;
     private int _loseNumber = 0;
 
@@ -24,12 +25,21 @@ public class SceneManager : MonoBehaviour
     private void OnDisable()
     {
         LevelDisplay.SelectedLocation -= InicilizeLocationScenes;
-        _gameManager.GameLost -= CheckGameResult;
+        //_gameManager.GameLost -= CheckGameResult;
     }
 
-    private void Start()
+    private void Awake()
     {
         DontDestroyOnLoad(this);
+
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void InicilizeLocationScenes(int location)
@@ -113,6 +123,9 @@ public class SceneManager : MonoBehaviour
             if (_loseNumber > 2)
             {
                 print("GAME OVER");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+                _loseNumber = 0;
+                _sceneNumber = 0;
             }
             else
             {

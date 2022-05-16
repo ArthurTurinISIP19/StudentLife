@@ -53,4 +53,9 @@ public class LevelDisplay : MonoBehaviour
         gameObject.SetActive(false);
         _locationCanvas.gameObject.SetActive(true);
     }
+
+    public void ButtonStartLocation()
+    {
+        SceneManager._instance.ButtonStartLocation();
+    }
 }
