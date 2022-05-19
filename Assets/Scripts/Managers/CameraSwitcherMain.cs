@@ -14,12 +14,14 @@ public class CameraSwitcherMain : MonoBehaviour
     [SerializeField] private GameObject GoodEndCameraPoint;
     [SerializeField] private GameObject BadEndCameraPoint;
 
-    public float _timeToEndAnimation;
 
     [SerializeField] private Camera _camera;
     [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _canvasInstruction;
 
     public static bool _isGameActivated = false;
+    public float _timeToEndAnimation;
+    private bool _isGameOver = false;
 
     public static bool GameActivated
     {
@@ -29,6 +31,7 @@ public class CameraSwitcherMain : MonoBehaviour
     private void Awake()
     {
         _isGameActivated = false;
+        _isGameOver = false;
         _camera.transform.position = StartCameraPoint.transform.position;
         _canvas.enabled = false;
     }
@@ -46,6 +49,7 @@ public class CameraSwitcherMain : MonoBehaviour
 
     private void StartActionSwitch()
     {
+        _canvasInstruction.enabled = false;
         _isGameActivated = true;
         _canvas.enabled = true;
         _camera.transform.position = ActionCameraPoint.transform.position;
@@ -63,14 +67,17 @@ public class CameraSwitcherMain : MonoBehaviour
     {
         _isGameActivated = false;
         _canvas.enabled = false;
-
-        if (isLost)
+        if (!_isGameOver)
         {
-            BadEndCameraPosition();
-        }
-        else
-        {
-            GoodEndCameraPosition();
+            if (isLost)
+            {
+                BadEndCameraPosition();
+            }
+            else
+            {
+                GoodEndCameraPosition();
+            }
+        _isGameOver = true;
         }
     }
     private void BadEndCameraPosition()

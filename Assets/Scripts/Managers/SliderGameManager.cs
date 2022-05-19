@@ -10,12 +10,13 @@ public class SliderGameManager : AbstractGameResult
     [SerializeField] private StartAnimation _startAnimation;
     [SerializeField] private Slider _slider;
 
-
-    private float _time = 10f;
+    [SerializeField] private float _time = 10f;
     private float _progress = 0f;
     private float _maxProgress = 10f;
     [SerializeField] private float _progressStepUp = 0.5f;
     private float _progressStepDown = 1f;
+
+    public override float LevelTime { get => _time; set => _time = value; }
 
     public override event UnityAction<bool> GameLost;
 

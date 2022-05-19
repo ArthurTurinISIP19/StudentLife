@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class SceneManager : MonoBehaviour
 {
@@ -10,13 +12,22 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private string[] _scenesSchool;
     [SerializeField] private string[] _scenesHome;
     [SerializeField] private string[] _scenesStreet;
+
     private AbstractGameResult _gameManager;
     public CameraSwitcher _cameraSwitcher;
     public CameraSwitcherMain _cameraSwitcherMain;
 
     private List<string> _currentScenes = new List<string>();
+    private static int _loseNumber = 0;
     private int _sceneNumber = 0;
-    private int _loseNumber = 0;
+
+    public int _currentScore;
+    private string _currentLocation;
+    private string[] _allScenes = { "School", "Home", "Street" };
+
+    [SerializeField] Text _school;
+    [SerializeField] Text _home;
+    [SerializeField] Text _street;
 
     private void OnEnable()
     {
@@ -25,11 +36,12 @@ public class SceneManager : MonoBehaviour
     private void OnDisable()
     {
         LevelDisplay.SelectedLocation -= InicilizeLocationScenes;
-        //_gameManager.GameLost -= CheckGameResult;
     }
 
     private void Awake()
     {
+        _loseNumber = 0;
+        Load();
         DontDestroyOnLoad(this);
 
         if (_instance == null)
@@ -46,6 +58,7 @@ public class SceneManager : MonoBehaviour
     {
         if (_currentScenes.Count > 0)
         {
+            _sceneNumber = 0;
             _currentScenes.Clear();
         }
 
@@ -53,12 +66,15 @@ public class SceneManager : MonoBehaviour
         {
             case 1:
                 _currentScenes.AddRange(_scenesSchool);
+                _currentLocation = "School";
                 break;
             case 2:
                 _currentScenes.AddRange(_scenesHome);
+                _currentLocation = "Home";
                 break;
             case 3:
                 _currentScenes.AddRange(_scenesStreet);
+                _currentLocation = "Street";
                 break;
             default:
                 break;
@@ -123,6 +139,8 @@ public class SceneManager : MonoBehaviour
             if (_loseNumber > 2)
             {
                 print("GAME OVER");
+                Save(_currentLocation);
+                _currentScore = 0;
                 UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
                 _loseNumber = 0;
                 _sceneNumber = 0;
@@ -149,6 +167,7 @@ public class SceneManager : MonoBehaviour
             {
                 StartCoroutine(WaitToNextScene(_cameraSwitcherMain._timeToEndAnimation));
             }
+            _currentScore += 100;
         }
     }
 
@@ -157,9 +176,55 @@ public class SceneManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         ChangeSceneNumber();
     }
+
     public IEnumerator WaitFindGetGameManager()
     {
         yield return new WaitForSeconds(0.1f);
         FindGetGameManager();
     }
+
+    private void Load()
+    {
+        foreach (string item in _allScenes)
+        {
+            switch (item)
+            {
+                case "School":
+                var dataSchool = SaveManager.Load<SaveLoadSceneData>(item);
+                _school.text = dataSchool.bestScore.ToString();
+                    break;
+                case "Home":
+                 var dataHome = SaveManager.Load<SaveLoadSceneData>(item);
+                  _home.text = dataHome.bestScore.ToString();
+                    break;
+                case "Street":
+                var dataStreet = SaveManager.Load<SaveLoadSceneData>(item);
+                _street.text = dataStreet.bestScore.ToString();
+                    break;
+                default:
+                    break;
+            }
+
+        } 
+    }
+
+    private void Save(string location)
+    {
+        var data = SaveManager.Load<SaveLoadSceneData>(location);
+        if(data.bestScore <= _currentScore)
+        {
+            SaveManager.Save(location, GetSave());
+        }
+    }
+
+    private SaveLoadSceneData GetSave()
+    {
+        var data = new SaveLoadSceneData()
+        {
+            bestScore = _currentScore
+        };
+        return data;
+    }
+
+
 }

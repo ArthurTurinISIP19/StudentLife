@@ -19,6 +19,8 @@ public class SliderGameManagerMain : AbstractGameResult
 
     public override event UnityAction<bool> GameLost;
 
+    public override float LevelTime { get => _time; set => _time = value; }
+
     private void Awake()
     {
         Application.targetFrameRate = 60;

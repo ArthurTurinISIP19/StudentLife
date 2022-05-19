@@ -14,6 +14,7 @@ public class CameraSwitcher : MonoBehaviour
     [SerializeField] private GameObject _actionCameraPoint;
     [SerializeField] private GameObject _goodEndCameraPoint;
     [SerializeField] private GameObject _badEndCameraPoint;
+    [SerializeField] private Canvas _canvasInstruction;
 
     public float _timeToEndAnimation;
 
@@ -54,6 +55,7 @@ public class CameraSwitcher : MonoBehaviour
 
     private void StartActionSwitch()
     {
+        _canvasInstruction.enabled = false;
         _isGameActivated = true;
         _canvas.enabled = true;
         _camera.transform.position = _actionCameraPoint.transform.position;

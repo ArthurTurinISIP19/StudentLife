@@ -4,8 +4,11 @@ using UnityEngine.Events;
 using UnityEngine.Scripting.APIUpdating;
 using UnityEngine.UI;
 
-public class Accelerometer : AbstractGameResult
+public class Accelerometer : MonoBehaviour
 {
+    public  event UnityAction<bool> IsAccelerometerLost;
+
+
     [SerializeField] private Slider slider;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -16,8 +19,6 @@ public class Accelerometer : AbstractGameResult
     private float _maxValue;
     private float _minValue;
 
-    public override event UnityAction<bool> GameLost;
-
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -25,8 +26,6 @@ public class Accelerometer : AbstractGameResult
         _animator.enabled = false;
         StartCoroutine(Wait2s());
         StartCoroutine(ChangeKoef());
-        StartCoroutine(WinTimer());
-
     }
 
     private void FixedUpdate()
@@ -45,6 +44,7 @@ public class Accelerometer : AbstractGameResult
         _direction = Input.acceleration * 100;
         _rigidbody.velocity = new Vector3(_direction.x + _incline, 0f, 0f);
     }
+
     private void CheckSlider()
     {
         slider.value = transform.position.x;
@@ -54,15 +54,11 @@ public class Accelerometer : AbstractGameResult
         }
     }
 
-    IEnumerator WinTimer()
-    {
-        yield return new WaitForSeconds(10f);
-        GameResult(false);
-    }
 
-    public override void GameResult(bool isGameLost)
+    public void GameResult(bool isGameLost)
     {
-        GameLost?.Invoke(isGameLost);
+        IsAccelerometerLost?.Invoke(isGameLost);
+        gameObject.SetActive(false);
     }
 
     IEnumerator Wait2s()

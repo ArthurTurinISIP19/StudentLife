@@ -6,7 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class SwipeTest : AbstractProgress
+public class Swipe : AbstractProgress
 {
     [SerializeField] private bool _isMobile = true;
     [SerializeField] private bool _swipeRight;

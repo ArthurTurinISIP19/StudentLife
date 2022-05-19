@@ -5,10 +5,12 @@ public class PlayerRuner : AbstractGameResult
 {
     [Header("Увеличивать у врага на 5 ")]
     [SerializeField] private int Speed = 50;
-
+    [SerializeField] private float _time;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private float _multiplier = 1f;
+
+    public override float LevelTime { get => _time; set => _time = value; }
 
     public override event UnityAction<bool> GameLost;
 

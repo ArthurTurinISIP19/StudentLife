@@ -5,6 +5,7 @@ public class LocationMenu : MonoBehaviour
     public static int currentLocation;
     [SerializeField] private Canvas LevelMenuCanvas;
 
+
     public void LocationSchool()
     {
         currentLocation = 1;
