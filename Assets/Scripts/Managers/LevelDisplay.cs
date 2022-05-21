@@ -1,17 +1,19 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelDisplay : MonoBehaviour
 {
     [SerializeField] private Canvas _locationCanvas;
-    [SerializeField] private Text[] _texts;
+    [SerializeField] private Text[] _textLinesOnBoard;
+    [SerializeField] private Text _textLineBestScore;
 
     public static UnityAction<int> SelectedLocation;
 
-    private string[] _levelSchool = { "Почему опаздываем ?!","Хочу пиццу","Опасное место","Да на улице чисто","Опять писать..." };
-    private string[] _levelHome = { "Набор выживания", "После 9 часов не пускаю", "Соседи", "Чистыми будут не все", "Главное знание" };
-    private string[] _levelStreet = { "Вам повестка", "Выходите ?", "Нет. Спасибо. Сидите", "Посещения обязательны", "???" };
+    private string[] _levelSchool = { "Почему опаздываем ?!","Хочу пиццу.","Белая комната.","На улице чисто.","Опять писать..." };
+    private string[] _levelHome = { "Набор выживания.", "После 9 не пускаю.", "Соседи.", "Банный день.", "Главное знание." };
+    private string[] _levelStreet = { "Вам повестка!", "Выходите ?", "Сидите! Сидите!", "Посещения обязательны.", "???" };
 
 
     private void OnEnable()
@@ -33,6 +35,7 @@ public class LevelDisplay : MonoBehaviour
             default:
                 break;
         }
+        SetBestScoreOnBoard();
     }
 
     public void StartLocation()
@@ -42,9 +45,9 @@ public class LevelDisplay : MonoBehaviour
 
     private void SetLevelsText(string[] levels)
     {
-        for (int i = 0; i < _texts.Length; i++)
+        for (int i = 0; i < _textLinesOnBoard.Length; i++)
         {
-            _texts[i].text = levels[i];
+            _textLinesOnBoard[i].text = levels[i];
         }
     }
 
@@ -56,6 +59,12 @@ public class LevelDisplay : MonoBehaviour
 
     public void ButtonStartLocation()
     {
-        SceneManager._instance.ButtonStartLocation();
+        ScenesManager._instance.ButtonStartLocation();
+    }
+   
+    private void SetBestScoreOnBoard()
+    {
+        var data = SaveManager.Load<SaveLoadSceneData>(ScenesManager._currentLocation);
+        _textLineBestScore.text = data.bestScore.ToString();
     }
 }

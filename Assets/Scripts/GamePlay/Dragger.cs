@@ -13,7 +13,7 @@ public class Dragger : AbstractProgress
 
     void OnMouseDrag()
     {
-        transform.position = GetMousePos(); //Vector3.MoveTowards(transform.position, GetMousePos() + _dragOffset, _speed * Time.deltaTime);
+        transform.position = GetMousePos(); 
         
         if(CameraSwitcherMain.GameActivated == false)
         {

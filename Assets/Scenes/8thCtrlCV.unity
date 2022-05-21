@@ -1033,7 +1033,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5.0042553, y: 0}
+  m_Offset: {x: -2.7303371, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1044,7 +1044,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 23.71149, y: 5}
+  m_Size: {x: 28.259327, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &398924766
 MonoBehaviour:
@@ -1177,7 +1177,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.9473972, y: 0}
+  m_Offset: {x: -1.415987, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1188,7 +1188,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.905205, y: 5}
+  m_Size: {x: 24.968025, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &408526215
 MonoBehaviour:
@@ -1321,7 +1321,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.1242, y: 0}
+  m_Offset: {x: -2.6853514, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1332,7 +1332,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 25.471601, y: 5}
+  m_Size: {x: 28.349298, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &422182999
 MonoBehaviour:
@@ -1702,7 +1702,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.5817614, y: 0}
+  m_Offset: {x: -1.8796825, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1713,7 +1713,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.436476, y: 5}
+  m_Size: {x: 23.840633, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &598198588
 MonoBehaviour:
@@ -1930,12 +1930,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2960, y: 1440}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2525,12 +2525,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2960, y: 1440}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2677,7 +2677,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 19.19423, y: 1.9573631}
+  m_Offset: {x: 19.304686, y: 1.9573631}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2688,7 +2688,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 24.71076, y: 30.901863}
+  m_Size: {x: 24.48985, y: 30.901863}
   m_EdgeRadius: 0
 --- !u!4 &1028545096
 Transform:
@@ -2759,8 +2759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1416, y: 150}
-  m_SizeDelta: {x: 854.47, y: 506.77}
+  m_AnchoredPosition: {x: 1134.4, y: 328.1}
+  m_SizeDelta: {x: 291.23, y: 150.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1111457356
 MonoBehaviour:
@@ -2784,7 +2784,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5b60d64df77824841bfe2623be966c0b, type: 3}
-    m_FontSize: 145
+    m_FontSize: 87
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3003,8 +3003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1049, y: 172}
-  m_SizeDelta: {x: 854.47, y: 463.41}
+  m_AnchoredPosition: {x: -1114, y: 204.61}
+  m_SizeDelta: {x: 324.13, y: 278.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1321564102
 MonoBehaviour:
@@ -3028,7 +3028,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5b60d64df77824841bfe2623be966c0b, type: 3}
-    m_FontSize: 145
+    m_FontSize: 87
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3504,7 +3504,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.02464, y: 0}
+  m_Offset: {x: -2.590569, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3515,7 +3515,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.670721, y: 5}
+  m_Size: {x: 28.538864, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1729476567
 MonoBehaviour:

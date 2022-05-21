@@ -10,6 +10,8 @@ public class Accelerometer : MonoBehaviour
 
 
     [SerializeField] private Slider slider;
+    [SerializeField] private int _maxValueRedZone;
+    [SerializeField] private int _minValueRedZone;
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private Vector3 _direction;
@@ -21,6 +23,8 @@ public class Accelerometer : MonoBehaviour
 
     private void Start()
     {
+        _maxValueRedZone = 30;
+        _minValueRedZone = -30;
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _animator.enabled = false;
@@ -48,7 +52,7 @@ public class Accelerometer : MonoBehaviour
     private void CheckSlider()
     {
         slider.value = transform.position.x;
-        if (transform.position.x > 45 || transform.position.x < -45)
+        if (transform.position.x > _maxValueRedZone || transform.position.x < _minValueRedZone)
         {
             GameResult(true);
         }
