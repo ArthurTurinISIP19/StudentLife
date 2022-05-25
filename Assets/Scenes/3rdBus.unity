@@ -1453,9 +1453,9 @@ MonoBehaviour:
   _game: {fileID: 1336201596}
   _startAnimation: {fileID: 1336201599}
   _slider: {fileID: 444686705}
-  _time: 10
-  _progressStepUp: 2
-  _progressStepDown: 1
+  _time: 5
+  _progressStepUp: 1
+  _progressStepDown: 0.5
 --- !u!1 &1265536804
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 9a7673bedb0f0ba459912b8ede95a95e
+  - enabled: 1
+    path: Assets/Scenes/10thShower.unity
+    guid: 86245a4f58973594cb0813db1db1beff
   m_configObjects: {}

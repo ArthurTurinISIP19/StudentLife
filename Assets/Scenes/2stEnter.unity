@@ -611,8 +611,8 @@ MonoBehaviour:
   _game: {fileID: 933972605}
   _startAnimation: {fileID: 933972607}
   _slider: {fileID: 444686705}
-  _time: 10
-  _progressStepUp: 4
+  _time: 5
+  _progressStepUp: 0.5
 --- !u!4 &279756222
 Transform:
   m_ObjectHideFlags: 0

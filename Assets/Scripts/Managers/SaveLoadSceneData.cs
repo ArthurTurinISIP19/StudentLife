@@ -7,5 +7,5 @@ using UnityEngine;
 [Serializable]
 public class SaveLoadSceneData 
 {
-    public int bestScore;
+    public float bestScore;
 }

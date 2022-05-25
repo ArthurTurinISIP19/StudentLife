@@ -55,7 +55,7 @@ public class CameraSwitcherMain : MonoBehaviour
         _camera.transform.position = ActionCameraPoint.transform.position;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_isGameActivated)
         {

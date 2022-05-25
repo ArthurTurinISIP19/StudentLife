@@ -23,7 +23,7 @@ public class SliderGameManagerMain : AbstractGameResult
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = -1;
 
         StartCoroutine(ProgressDown());
         _slider.value = _progress;

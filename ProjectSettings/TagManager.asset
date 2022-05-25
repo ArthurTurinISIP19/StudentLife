@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DragItem
+  - Ground
   layers:
   - Default
   - TransparentFX

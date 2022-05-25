@@ -26,12 +26,15 @@ public class ScenesManager : MonoBehaviour
     public CameraSwitcher _cameraSwitcher;
     public CameraSwitcherMain _cameraSwitcherMain;
 
-    //Количество проигрышей и номер мини игры
+    //Количество проигрышей/выигрышей и номер мини игры
     private static int _loseNumber = 0;
+    private static int _gameNumber = 1;
     private static int _sceneNumber = 0;
+    private static float _bonusKoef = 1f;
+    public static float _timeChanger = 0f;
 
     //Счет и локация(набор мини игр)
-    public static int _currentScore;
+    public static float _currentScore;
     public static string _currentLocation;
 
     private void OnEnable()
@@ -108,7 +111,18 @@ public class ScenesManager : MonoBehaviour
             _gameManager = GameObject.Find("Red").GetComponent<AbstractGameResult>();
             _gameManager.GameLost += CheckGameResult;
         }
+        ChangeTime();
         FindGetCameraSwitcher();
+        
+    }
+
+    private void ChangeTime()
+    {
+        if(_gameNumber % 2 == 0 && _timeChanger < 2f)
+        {
+            _timeChanger += 0.5f;
+        }
+        _gameManager.LevelTime -= _timeChanger;
     }
     private void FindGetCameraSwitcher()
     {
@@ -140,10 +154,14 @@ public class ScenesManager : MonoBehaviour
         if(isGameLost == true)
         {
             _loseNumber++;
+            _bonusKoef = 1f;
             if (_loseNumber > 2)
             {
                 StartCoroutine(WaitToLastBadAnimation());
                 _loseNumber = 0;
+                _bonusKoef = 1;
+                _timeChanger = 0.2f;
+                _gameNumber = 0;
                 _sceneNumber = 0;
             }
             else
@@ -170,11 +188,14 @@ public class ScenesManager : MonoBehaviour
             }
             ChangeScore();
         }
+        _gameNumber++;
+
     }
 
     private void ChangeScore()
     {
-        _currentScore += 100;
+        _currentScore += 100 * _bonusKoef;
+        _bonusKoef += 0.1f;
     }
 
     public IEnumerator WaitToNextScene(float waitTime)

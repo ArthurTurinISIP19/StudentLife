@@ -1889,7 +1889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u0410\u0416\u0418\u041C\u0410\u0419\n\u041D\u0410\u0416\u0418\u041C\u0410\u0419\n\u041D\u0410\u0416\u0418\u041C\u0410\u0419"
+  m_Text: "\u041D\u0410\u0416\u0418\u041C\u0410\u0419!\n\u041D\u0410\u0416\u0418\u041C\u0410\u0419!\n\u041D\u0410\u0416\u0418\u041C\u0410\u0419!"
 --- !u!222 &1232738579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3631,7 +3631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4dc12fc31f56e44aae67b67eb2c2ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 25
 --- !u!4 &1784210791904491052
 Transform:
   m_ObjectHideFlags: 0
