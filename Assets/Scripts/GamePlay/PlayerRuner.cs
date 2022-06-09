@@ -9,6 +9,7 @@ public class PlayerRuner : AbstractGameResult
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private float _multiplier = 1f;
+    public static float _multiplierStep = 0.04f;
 
     public override float LevelTime { get => _time; set => _time = value; }
 
@@ -35,10 +36,13 @@ public class PlayerRuner : AbstractGameResult
     {
         if (CameraSwitcher.GameActivated)
         {
-            _multiplier += 0.05f;
-            if(_animator.speed < 2)
+            if(Input.touchCount == 1)
             {
-                _animator.speed += 0.1f;
+                _multiplier += _multiplierStep;
+                if(_animator.speed < 2)
+                {
+                    _animator.speed += 0.1f;
+                }
             }
         }
     }

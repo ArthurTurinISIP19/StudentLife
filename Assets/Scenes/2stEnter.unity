@@ -611,8 +611,8 @@ MonoBehaviour:
   _game: {fileID: 933972605}
   _startAnimation: {fileID: 933972607}
   _slider: {fileID: 444686705}
-  _time: 5
-  _progressStepUp: 0.5
+  _time: 4
+  _progressStepUp: 0.2
 --- !u!4 &279756222
 Transform:
   m_ObjectHideFlags: 0
@@ -1653,7 +1653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &757775028
 RectTransform:
   m_ObjectHideFlags: 0

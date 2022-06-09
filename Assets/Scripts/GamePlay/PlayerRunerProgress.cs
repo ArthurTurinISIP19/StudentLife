@@ -32,14 +32,17 @@ public class PlayerRunerProgress : AbstractProgress
     {
         if (CameraSwitcherMain.GameActivated)
         {
-            _multiplier += 0.05f;
-
-            if (_animator.speed < 2)
+            if (Input.touchCount == 1)
             {
-                _animator.speed += 0.1f;
-            }
+                _multiplier += 0.05f;
 
-            ProgressUp();
+                if (_animator.speed < 2)
+                {
+                    _animator.speed += 0.1f;
+                }
+
+                ProgressUp();
+            }
         }
     }
     private void DecreaseSpeed()

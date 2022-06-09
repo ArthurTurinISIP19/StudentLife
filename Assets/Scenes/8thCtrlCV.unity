@@ -2162,7 +2162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &846148150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2952,7 +2952,7 @@ MonoBehaviour:
   _game: {fileID: 1028545094}
   _startAnimation: {fileID: 1234154078}
   _slider: {fileID: 695479394}
-  _time: 5
+  _time: 4
   _progressStepUp: 2
   _progressStepDown: 0
 --- !u!4 &1303057425

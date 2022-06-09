@@ -4,13 +4,13 @@ using UnityEngine.Events;
 public class PlayerRunnerJump : AbstractGameResult
 {
     [Header("Увеличивать у врага на 5 ")]
-    [SerializeField] private int Speed = 50;
+    [SerializeField] public static float _speed = 50;
     [SerializeField] private float _time;
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private float _multiplier = 1f;
     private bool _isGrounded;
-    private Vector3 jump = new Vector3(0, 100, 0);
+    public static Vector3 _jump = new Vector3(0, 100, 0);
 
     public override float LevelTime { get => _time; set => _time = value; }
 
@@ -29,7 +29,7 @@ public class PlayerRunnerJump : AbstractGameResult
     {
         if (CameraSwitcherMain.GameActivated)
         {
-            _rigidbody2D.transform.Translate(Vector2.right * Speed * _multiplier * Time.deltaTime);
+            _rigidbody2D.transform.Translate(Vector2.right * _speed * _multiplier * Time.deltaTime);
         }
     }
     public void Jump()
@@ -38,7 +38,7 @@ public class PlayerRunnerJump : AbstractGameResult
         {
             if (_isGrounded)
             {
-                _rigidbody2D.AddForce(jump, ForceMode2D.Impulse);
+                _rigidbody2D.AddForce(_jump, ForceMode2D.Impulse);
                 _isGrounded = false;
             }
         }

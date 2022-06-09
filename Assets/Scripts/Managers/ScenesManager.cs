@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
@@ -36,6 +33,9 @@ public class ScenesManager : MonoBehaviour
     //Счет и локация(набор мини игр)
     public static float _currentScore;
     public static string _currentLocation;
+
+    //Реклама
+    [SerializeField] private AdsIntestitial _adsIntestitial;
 
     private void OnEnable()
     {
@@ -118,11 +118,28 @@ public class ScenesManager : MonoBehaviour
 
     private void ChangeTime()
     {
-        if(_gameNumber % 2 == 0 && _timeChanger < 2f)
+        if(_gameNumber % 2 == 0 && _timeChanger < 2.5f)
         {
             _timeChanger += 0.5f;
         }
+
         _gameManager.LevelTime -= _timeChanger;
+
+
+        if (GameObject.Find("Red").GetComponent<PlayerRuner>() != null && _gameNumber % 2 == 0)
+        {
+            PlayerRuner._multiplierStep -= 0.015f;
+            EnemyRunner._addMultiplier += 0.0015f;
+        }
+
+        if (GameObject.Find("Red").GetComponent<PlayerRunnerJump>() != null && _gameNumber % 2 == 0)
+        {
+            PlayerRunnerJump._speed += 15f;
+            PlayerRunnerJump._jump = new Vector3(0, PlayerRunnerJump._jump.y - 10, 0);
+            print(PlayerRunnerJump._jump);
+
+        }
+        
     }
     private void FindGetCameraSwitcher()
     {
@@ -163,6 +180,7 @@ public class ScenesManager : MonoBehaviour
                 _timeChanger = 0.2f;
                 _gameNumber = 0;
                 _sceneNumber = 0;
+
             }
             else
             {
@@ -212,6 +230,7 @@ public class ScenesManager : MonoBehaviour
     private IEnumerator WaitToLastBadAnimation()
     {
         yield return new WaitForSeconds(timeToLastBadAnimation);
+        _adsIntestitial.ShowAd();
         SceneManager.LoadScene("GameOver");
     }
 }

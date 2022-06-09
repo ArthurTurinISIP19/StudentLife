@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
 
 public class LelvelManager : MonoBehaviour
 {
@@ -14,31 +11,38 @@ public class LelvelManager : MonoBehaviour
 
     public void LocationMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        StartCoroutine(Waiter());
     }
     public void LevelRun()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("1stRunLevel");
+        SceneManager.LoadScene("1stRunLevel");
     }
     public void LevelEnter()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("2stEnter");
+        SceneManager.LoadScene("2stEnter");
     }
 
     public void LevelBus()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("3rdBus");
+        SceneManager.LoadScene("3rdBus");
     }
     public void RingRun()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("4thRingRun");
+        SceneManager.LoadScene("4thRingRun");
     }
     public void Train()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("9thWinter");
+        SceneManager.LoadScene("9thWinter");
     }
     public void MainMenu()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainScene");
+    }
+
+    IEnumerator Waiter()
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene("MainScene");
+
     }
 }

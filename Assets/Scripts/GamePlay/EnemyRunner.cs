@@ -8,7 +8,7 @@ public class EnemyRunner : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Animator _animator;
     private float _multiplier = 1f;
-    private float _addMultiplier = 0.002f;
+    public static float _addMultiplier = 0.002f;
 
     private void Start()
     {

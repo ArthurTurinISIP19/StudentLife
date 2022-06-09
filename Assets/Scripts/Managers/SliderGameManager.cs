@@ -93,8 +93,8 @@ public class SliderGameManager : AbstractGameResult
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.1f);
-            _time -= 0.1f;
+            yield return new WaitForSeconds(0.01f);
+            _time -= 0.01f;
             if (_time <= 0f)
             {
                 GameResult(true);

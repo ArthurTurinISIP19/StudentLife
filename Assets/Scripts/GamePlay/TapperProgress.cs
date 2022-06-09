@@ -13,11 +13,15 @@ public class TapperProgress : AbstractProgress
         _animator = GetComponent<Animator>();
     }
 
-    public void Button()
+    public void ButtonDown()
     {
-        ProgressUp();
-        PlayAnimation();
+        if(Input.touchCount == 1)
+        {
+            ProgressUp();
+            PlayAnimation();
+        }
     }
+
 
     private void PlayAnimation()
     {
